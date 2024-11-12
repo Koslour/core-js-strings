@@ -156,7 +156,6 @@ function repeatString(str, times) {
 function removeFirstOccurrences(/* str, value */) {
   throw new Error('Not implemented');
 }
-
 /**
  * Remove the last occurrence of a substring from a string.
  *
