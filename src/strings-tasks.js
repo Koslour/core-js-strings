@@ -245,10 +245,9 @@ function formatTime(/* minutes, seconds */) {
  *   reverseString('abcdef') => 'fedcba'
  *   reverseString('12345') => '54321'
  */
-function reverseString(/* str */) {
-  throw new Error('Not implemented');
+function reverseString(str) {
+  return str.split('').reverse().join('');
 }
-
 /**
  * Returns a string with characters in alphabetical order.
  *
@@ -261,7 +260,9 @@ function reverseString(/* str */) {
  *   orderAlphabetically('abc123xyz') => '123abcxyz'
  */
 function orderAlphabetically(str) {
-  return reverseString(str);
+  const arr = str.split('');
+  const res = arr.sort().join('');
+  return res;
 }
 
 /**
@@ -317,10 +318,23 @@ function countVowels(str) {
  *   isPalindrome('apple') => false
  *   isPalindrome('No lemon, no melon') => true
  */
-function isPalindrome(/* str */) {
-  throw new Error('Not implemented');
+function isPalindrome(str) {
+  const exampleStr = str
+    .replaceAll(' ', '')
+    .replaceAll(',', '')
+    .toLowerCase()
+    .replace(/[^\w\s']|_/g, '');
+  const verificationStr = str
+    .replaceAll(' ', '')
+    .replaceAll(',', '')
+    .toLowerCase()
+    .toLowerCase()
+    .split('')
+    .reverse()
+    .join('')
+    .replace(/[^\w\s']|_/g, '');
+  return exampleStr === verificationStr;
 }
-
 /**
  * Find the longest word in the sentence. If there are multiple longest words,
  * the function returns the first one encountered.
@@ -348,8 +362,8 @@ function findLongestWord(sentence) {
  *   reverseWords('Hello World') => 'olleH dlroW'
  *   reverseWords('The Quick Brown Fox') => 'ehT kciuQ nworB xoF'
  */
-function reverseWords(/* str */) {
-  throw new Error('Not implemented');
+function reverseWords(str) {
+  return str.split('').reverse().join('').split(' ').reverse().join(' ');
 }
 
 /**
@@ -363,8 +377,10 @@ function reverseWords(/* str */) {
  *   invertCase('JavaScript is Fun') => 'jAVAsCRIPT IS fUN'
  *   invertCase('12345') => '12345'
  */
-function invertCase(/* str */) {
-  throw new Error('Not implemented');
+function invertCase(str) {
+  return Array.from(str, (c) =>
+    c === c.toLowerCase() ? c.toUpperCase() : c.toLowerCase()
+  ).join('');
 }
 
 /**
