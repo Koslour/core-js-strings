@@ -194,10 +194,16 @@ function removeLastOccurrences(str, value) {
  *   sumOfCodes('') => 0
  *   sumOfCodes() => 0
  */
-function sumOfCodes(/* str */) {
-  throw new Error('Not implemented');
+function sumOfCodes(str) {
+  let cnt = 0;
+  if (str === '' || str === undefined || str === null) {
+    return 0;
+  }
+  str.split('').forEach((num) => {
+    cnt += num.charCodeAt(0);
+  });
+  return cnt;
 }
-
 /**
  * Checks if a string starts with a specific substring.
  *
