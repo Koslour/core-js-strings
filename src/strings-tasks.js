@@ -153,8 +153,13 @@ function repeatString(str, times) {
  *   removeFirstOccurrences('I like legends', 'end') => 'I like legs'.
  *   removeFirstOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeFirstOccurrences(str, value) {
+  const pos = str.indexOf(value);
+  if (pos === -1) {
+    return str;
+  }
+  const sb = str.slice(0, pos) + str.slice(pos + value.length);
+  return sb;
 }
 /**
  * Remove the last occurrence of a substring from a string.
@@ -168,8 +173,13 @@ function removeFirstOccurrences(/* str, value */) {
  *   removeLastOccurrences('I like legends', 'end') => 'I like legs'.
  *   removeLastOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
-function removeLastOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeLastOccurrences(str, value) {
+  const pos = str.lastIndexOf(value);
+  if (pos === -1) {
+    return str;
+  }
+  const sb = str.slice(0, pos) + str.slice(pos + value.length);
+  return sb;
 }
 
 /**
