@@ -247,8 +247,16 @@ function endsWith(str, substr) {
  *   formatTime(0, 45) => "00:45"
  *   formatTime(0, 0) => "00:00"
  */
-function formatTime(/* minutes, seconds */) {
-  throw new Error('Not implemented');
+function formatTime(minutes, seconds) {
+  let minBuf = minutes.toString();
+  let secBuf = seconds.toString();
+  if (minBuf < 10) {
+    minBuf = minBuf.padStart(2, '0');
+  }
+  if (secBuf < 10) {
+    secBuf = secBuf.padStart(2, '0');
+  }
+  return `${minBuf}:${secBuf}`;
 }
 /**
  * Returns a string in reverse order.
